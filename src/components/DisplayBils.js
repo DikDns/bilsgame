@@ -1,30 +1,42 @@
 import React from "react";
 
 function DisplayBils(props) {
-  const [shake, setShake] = React.useState(true);
+  const [state, setState] = React.useState({
+    shake: false,
+    selected: false,
+  });
+
+  function handleOnClick(event) {
+    event.preventDefault();
+    setState((prevState) => ({
+      selected: !prevState.selected,
+      shake: true,
+    }));
+  }
 
   function handleAnimationEnd(event) {
     event.preventDefault();
-    setShake(() => false);
+    setState((prevState) => ({
+      selected: prevState.selected,
+      shake: false,
+    }));
   }
 
-  React.useEffect(() => {
-    setShake(() => true);
-  }, [props.selected]);
+  React.useState(() => {}, [state]);
 
   return (
     <div
-      id={props.index}
-      className={`${shake ? `shake` : ``} bils my-2 ${
-        props.selected ? `bg-info text-white` : ``
+      id={props.id}
+      className={`${state.shake ? `shake` : ``} bils my-2 ${
+        state.selected ? `bg-info text-white` : ``
       }`}
-      onClick={(event) => props.onClick(event, props)}
+      onClick={(event) => handleOnClick(event)}
       onAnimationEnd={(event) => handleAnimationEnd(event)}
     >
       <span
         className={`h-100 fw-bold d-flex justify-content-center align-items-center`}
       >
-        {props.number}
+        {props.name}
       </span>
     </div>
   );
