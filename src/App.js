@@ -3,12 +3,31 @@ import DisplayBils from "./components/DisplayBils";
 import "./css/main.css";
 
 function App() {
-  const [selected, setSelected] = React.useState(false);
+  const [game, setGame] = React.useState({
+    player: {
+      highscore: 0,
+    },
+    bils: [
+      {
+        name: "4",
+        selected: false,
+      },
+      {
+        name: "1",
+        selected: false,
+      },
+      {
+        name: "8",
+        selected: false,
+      },
+    ],
+  });
 
-  function handleBilsSelected(event, props) {
+  function handleBilsClicked(event) {
     event.preventDefault();
-    setSelected((prevSelected) => !prevSelected);
-    console.log(props);
+    setGame((prevGame) => {
+      return !prevGame.bils[0].selected;
+    });
   }
 
   return (
@@ -16,42 +35,16 @@ function App() {
       <h1>Hello World</h1>
       <div className="container py-5">
         <div className="row d-flex justify-content-center align-items-center flex-column">
-          <DisplayBils
-            index="0"
-            number="4"
-            selected={selected}
-            onClick={handleBilsSelected}
-          />
-          <DisplayBils
-            index="1"
-            number="0"
-            selected={selected}
-            onClick={handleBilsSelected}
-          />
-          <DisplayBils
-            index="2"
-            number="5"
-            selected={selected}
-            onClick={handleBilsSelected}
-          />
-          <DisplayBils
-            index="3"
-            number="2"
-            selected={selected}
-            onClick={handleBilsSelected}
-          />
-          <DisplayBils
-            index="4"
-            number="8"
-            selected={selected}
-            onClick={handleBilsSelected}
-          />
-          <DisplayBils
-            index="5"
-            number="4"
-            selected={selected}
-            onClick={handleBilsSelected}
-          />
+          {game.bils.map((bils) => {
+            return (
+              <DisplayBils
+                index="0"
+                number={bils.name}
+                selected={bils.selected}
+                onClick={handleBilsClicked}
+              />
+            );
+          })}
         </div>
       </div>
     </main>
