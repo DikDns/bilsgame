@@ -28,6 +28,10 @@ h6 {
   transition: all 0.2s;
 }
 
+.bils:hover {
+  cursor: pointer;
+}
+
 .shake {
   animation: shake 0.2s;
 }
