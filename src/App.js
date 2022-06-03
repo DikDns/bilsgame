@@ -7,31 +7,31 @@ function App() {
     player: {
       highscore: 0,
     },
-    bils: [
-      {
-        id: 1,
-        name: "4",
-        selected: false,
-      },
-      {
-        id: 2,
-        name: "1",
-        selected: false,
-      },
-      {
-        id: 3,
-        name: "8",
-        selected: false,
-      },
-    ],
   });
+  const [bils, setBils] = React.useState([
+    {
+      id: 1,
+      name: "4",
+      selected: false,
+    },
+    {
+      id: 2,
+      name: "1",
+      selected: false,
+    },
+    {
+      id: 3,
+      name: "8",
+      selected: false,
+    },
+  ]);
 
   return (
     <main>
       <h1>Hello World</h1>
       <div className="container py-5">
         <div className="row d-flex justify-content-center align-items-center flex-column">
-          {game.bils.map((item, index) => (
+          {bils.map((item, index) => (
             <DisplayBils key={index} id={item.id} name={item.name} />
           ))}
         </div>
