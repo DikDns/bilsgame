@@ -25,4 +25,6 @@ h6 {
   border-radius: 12px;
   font-family: "SplineSans-Bold";
   font-size: 3em;
+
+  transition: all 0.2s;
 }
