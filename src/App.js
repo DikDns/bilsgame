@@ -22,6 +22,36 @@ function App() {
             selected={selected}
             onClick={handleBilsSelected}
           />
+          <DisplayBils
+            index="1"
+            number="0"
+            selected={selected}
+            onClick={handleBilsSelected}
+          />
+          <DisplayBils
+            index="2"
+            number="5"
+            selected={selected}
+            onClick={handleBilsSelected}
+          />
+          <DisplayBils
+            index="3"
+            number="2"
+            selected={selected}
+            onClick={handleBilsSelected}
+          />
+          <DisplayBils
+            index="4"
+            number="8"
+            selected={selected}
+            onClick={handleBilsSelected}
+          />
+          <DisplayBils
+            index="5"
+            number="4"
+            selected={selected}
+            onClick={handleBilsSelected}
+          />
         </div>
       </div>
     </main>
