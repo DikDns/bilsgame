@@ -35,7 +35,7 @@ function DisplayBils(props) {
       onAnimationEnd={(event) => handleAnimationEnd(event)}
     >
       <span
-        className={`noselect h-100 fw-bold d-flex justify-content-center align-items-center`}
+        className={`h-100 fw-bold d-flex justify-content-center align-items-center`}
       >
         {props.name}
       </span>
