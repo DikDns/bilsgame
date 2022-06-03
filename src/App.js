@@ -5,10 +5,10 @@ import "./css/main.css";
 function App() {
   const [selected, setSelected] = React.useState(false);
 
-  function handleBilsSelected(event, index) {
+  function handleBilsSelected(event, props) {
     event.preventDefault();
     setSelected((prevSelected) => !prevSelected);
-    console.log("selected ", index);
+    console.log(props);
   }
 
   return (
@@ -21,7 +21,6 @@ function App() {
             number="4"
             selected={selected}
             onClick={handleBilsSelected}
-            onAnimationEnd={handleBilsSelected}
           />
         </div>
       </div>
