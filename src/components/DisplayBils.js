@@ -3,7 +3,9 @@ import React from "react";
 function DisplayBils(props) {
   return (
     <div className="bils">
-      <span className="bils-number">{props.number}</span>
+      <span className="h-100 fw-bold d-flex justify-content-center align-items-center">
+        {props.number}
+      </span>
     </div>
   );
 }
