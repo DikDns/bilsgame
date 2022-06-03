@@ -21,6 +21,7 @@ function App() {
             number="4"
             selected={selected}
             onClick={handleBilsSelected}
+            onAnimationEnd={handleBilsSelected}
           />
         </div>
       </div>
