@@ -5,7 +5,11 @@ function App() {
   return (
     <main>
       <h1>Hello World</h1>
-      <DisplayBils number="0" />
+      <div className="container py-5">
+        <div className="row d-flex justify-content-center">
+          <DisplayBils number="0" />
+        </div>
+      </div>
     </main>
   );
 }
