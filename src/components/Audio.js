@@ -10,9 +10,9 @@ import React from "react";
 // import "../assets/music/sfx/lose.wav";
 // import "../assets/music/sfx/win.wav";
 
-function Audio(url) {
+function Audio(url, toggle) {
   const [audio] = React.useState(new Audio(url));
-  const [playing, setPlaying] = React.useState(false);
+  const [playing, setPlaying] = React.useState(toggle ? true : false);
 
   React.useEffect(() => {
     playing ? audio.play() : audio.pause();
