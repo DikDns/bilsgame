@@ -12,17 +12,22 @@ function App() {
     {
       id: 1,
       name: "4",
-      selected: false,
     },
     {
       id: 2,
       name: "1",
-      selected: false,
     },
     {
       id: 3,
       name: "8",
-      selected: false,
+    },
+    {
+      id: 4,
+      name: "1",
+    },
+    {
+      id: 5,
+      name: "0",
     },
   ]);
 
