@@ -1,13 +1,30 @@
+/* import "./assets/fonts/SplineSans-Light.ttf";
+import "./assets/fonts/SplineSans-Medium.ttf";
+import "./assets/fonts/SplineSans-Regular.ttf";
+import "./assets/fonts/SplineSans-SemiBold.ttf";
+import "./assets/fonts/SplineSans-Bold.ttf"; */
+@font-face {
+  font-family: "SplineSans-Regular";
+  src: local("SplineSans-Regular"),
+    url("./assets/fonts/SplineSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SplineSans-Bold";
+  src: local("SplineSans-Bold"),
+    url("./assets/fonts/SplineSans-Bold.ttf") format("truetype");
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
