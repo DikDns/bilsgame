@@ -26,7 +26,8 @@ function App() {
   function handleBilsClicked(event) {
     event.preventDefault();
     setGame((prevGame) => {
-      return !prevGame.bils[0].selected;
+      console.log(prevGame);
+      // return !prevGame.bils[0].selected;
     });
   }
 
@@ -35,10 +36,10 @@ function App() {
       <h1>Hello World</h1>
       <div className="container py-5">
         <div className="row d-flex justify-content-center align-items-center flex-column">
-          {game.bils.map((bils) => {
+          {game.bils.map((bils, index) => {
             return (
               <DisplayBils
-                index="0"
+                index={index}
                 number={bils.name}
                 selected={bils.selected}
                 onClick={handleBilsClicked}
