@@ -2,8 +2,12 @@ import React from "react";
 
 function DisplayBils(props) {
   return (
-    <div className="bils">
-      <span className="h-100 fw-bold d-flex justify-content-center align-items-center">
+    <div
+      id={props.index}
+      className="bils my-2"
+      onClick={(event) => props.onClick(event, props.index)}
+    >
+      <span className="h-100 fw-bold  d-flex justify-content-center align-items-center">
         {props.number}
       </span>
     </div>
