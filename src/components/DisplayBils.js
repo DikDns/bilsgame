@@ -8,6 +8,7 @@ function DisplayBils(props) {
 
   function handleOnClick(event) {
     event.preventDefault();
+
     setState((prevState) => ({
       selected: !prevState.selected,
       shake: true,

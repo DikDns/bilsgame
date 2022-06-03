@@ -17,18 +17,6 @@ function App() {
       id: 2,
       name: "1",
     },
-    {
-      id: 3,
-      name: "8",
-    },
-    {
-      id: 4,
-      name: "1",
-    },
-    {
-      id: 5,
-      name: "0",
-    },
   ]);
 
   return (
