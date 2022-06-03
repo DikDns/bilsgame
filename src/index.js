@@ -3,6 +3,11 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import "./assets/fonts/SplineSans-Light.ttf";
+import "./assets/fonts/SplineSans-Medium.ttf";
+import "./assets/fonts/SplineSans-Regular.ttf";
+import "./assets/fonts/SplineSans-SemiBold.ttf";
+import "./assets/fonts/SplineSans-Bold.ttf";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
