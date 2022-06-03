@@ -26,16 +26,6 @@ function App() {
     ],
   });
 
-  function handleBilsClicked(event, id) {
-    event.preventDefault();
-    setGame((prevGame) => {
-      prevGame.bils = prevGame.bils.map((item) =>
-        item.id === id ? { ...item, selected: !item.selected } : { ...item }
-      );
-      return prevGame;
-    });
-  }
-
   return (
     <main>
       <h1>Hello World</h1>
