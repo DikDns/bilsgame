@@ -14,9 +14,27 @@ const bilsSound = {
   duplicated: new Audio(bilsDuplicated),
 };
 
+const durationBar = (setDurationBarWidth, duration) => {
+  const scaleBetween = (unscaledNum, minAllowed, maxAllowed, min, max) =>
+    ((maxAllowed - minAllowed) * (unscaledNum - min)) / (max - min) +
+    minAllowed;
+
+  const max = duration;
+  setInterval(() => {
+    if (duration >= 0) {
+      setDurationBarWidth(() => ({
+        width: `${Math.floor(scaleBetween(duration, 0, 100, 0, max))}%`,
+      }));
+      duration -= 10;
+    } else {
+      clearInterval();
+    }
+  }, 10);
+};
+
 function App() {
   const [inGame, setInGame] = React.useState({
-    clickedDuration: 500,
+    clickedDuration: 1000,
     lastTimeClicked: 0,
   });
 
@@ -30,6 +48,10 @@ function App() {
     new Bils(6, "4", false, bilsSound),
   ]);
 
+  const [durationBarWidth, setDurationBarWidth] = React.useState({
+    width: "0%",
+  });
+
   const handleOnClick = async (event, gameObject) => {
     event.preventDefault();
 
@@ -37,8 +59,8 @@ function App() {
     const duration = inGame.clickedDuration + inGame.lastTimeClicked;
 
     if (time > duration) {
+      durationBar(setDurationBarWidth, inGame.clickedDuration);
       setInGame((prevInGame) => {
-        console.log(prevInGame);
         return {
           ...prevInGame,
           lastTimeClicked: time,
@@ -68,7 +90,7 @@ function App() {
 
   return (
     <main>
-      <DisplayDurationBar />
+      <DisplayDurationBar style={durationBarWidth} />
       <div className="container py-5">
         <div className="row d-flex justify-content-center align-items-center flex-column">
           <h1 className="text-center">Hello World</h1>
