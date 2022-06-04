@@ -1,6 +1,11 @@
 import React from "react";
 import DisplayBils from "./components/DisplayBils.js";
+import Bils from "./gameObjects/Bils.js";
 import "./css/main.css";
+
+import bilsClicked from "./assets/music/sfx/bils-clicked.wav";
+import bilsActivated from "./assets/music/sfx/bils-activated.wav";
+import bilsDuplicated from "./assets/music/sfx/bils-duplicated.wav";
 
 function App() {
   const [game, setGame] = React.useState({
@@ -18,6 +23,19 @@ function App() {
       name: "1",
     },
   ]);
+
+  const bilsSound = {
+    clicked: new Audio(bilsClicked),
+    activated: new Audio(bilsActivated),
+    duplicated: new Audio(bilsDuplicated),
+  };
+
+  const testBils = new Bils(4, "7", false, bilsSound);
+
+  console.log(testBils);
+  console.log(testBils.get.name());
+  console.log(testBils.set.name("1"));
+  console.log(testBils.get.name());
 
   return (
     <main>
