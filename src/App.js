@@ -7,6 +7,7 @@ import "./css/main.css";
 import bilsClicked from "./assets/music/sfx/bils-clicked.wav";
 import bilsActivated from "./assets/music/sfx/bils-activated.wav";
 import bilsDuplicated from "./assets/music/sfx/bils-duplicated.wav";
+import play from "./assets/music/play.mp3";
 
 const bilsSound = {
   clicked: new Audio(bilsClicked),
@@ -43,14 +44,17 @@ function App() {
     new Bils(1, "7", false, bilsSound),
     new Bils(2, "2", false, bilsSound),
     new Bils(3, "9", false, bilsSound),
-    new Bils(4, "1", false, bilsSound),
-    new Bils(5, "3", false, bilsSound),
-    new Bils(6, "4", false, bilsSound),
   ]);
 
   const [durationBarWidth, setDurationBarWidth] = React.useState({
     width: "0%",
   });
+
+  function handleMusic() {
+    const audio = new Audio(play);
+    audio.play();
+    audio.loop = true;
+  }
 
   const handleOnClick = async (event, gameObject) => {
     event.preventDefault();
@@ -93,6 +97,13 @@ function App() {
   return (
     <main>
       <DisplayDurationBar style={durationBarWidth} />
+      <div
+        type="button"
+        onClick={handleMusic}
+        className="btn btn-secondary btn-lg"
+      >
+        play music
+      </div>
       <div className="container py-5">
         <div className="row d-flex justify-content-center align-items-center flex-column">
           <h1 className="text-center">Hello World</h1>
