@@ -1,9 +1,13 @@
 import React from "react";
 
 function DisplayDurationClicked(props) {
+  const barStyle = {
+    width: "95%",
+  };
+
   return (
-    <div className="clicked-duration w-100 h-25 bg-dark">
-      <span className="duration-bar" id="duration-bar"></span>
+    <div className="duration-box w-100">
+      <div style={barStyle} className="duration-bar bg-secondary"></div>
     </div>
   );
 }
