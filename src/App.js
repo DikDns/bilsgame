@@ -14,11 +14,6 @@ const bilsSound = {
 };
 
 function App() {
-  // const [game, setGame] = React.useState({
-  //   player: {
-  //     highscore: 0,
-  //   },
-  // });
   const [bils, setBils] = React.useState([
     new Bils(0, "0", false, bilsSound),
     new Bils(1, "7", false, bilsSound),
