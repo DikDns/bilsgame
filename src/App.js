@@ -1,5 +1,6 @@
 import React from "react";
 import DisplayBils from "./components/DisplayBils.js";
+import DisplayDurationBar from "./components/DisplayDurationBar.js";
 import Bils from "./gameObjects/Bils.js";
 import "./css/main.css";
 
@@ -67,6 +68,7 @@ function App() {
 
   return (
     <main>
+      <DisplayDurationBar />
       <div className="container py-5">
         <div className="row d-flex justify-content-center align-items-center flex-column">
           <h1 className="text-center">Hello World</h1>
