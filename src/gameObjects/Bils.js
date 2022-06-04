@@ -8,16 +8,14 @@ class Bils {
       clicked: sound.clicked,
       duplicated: sound.duplicated,
     };
-    this.set = {
-      name(newName) {
-        this.name = newName;
-      },
-    };
-    this.get = {
-      name() {
-        return this.name;
-      },
-    };
+  }
+
+  setName(newName) {
+    this.name = newName;
+  }
+
+  getName() {
+    return this.name;
   }
 }
 
