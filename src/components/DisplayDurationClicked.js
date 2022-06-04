@@ -2,8 +2,8 @@ import React from "react";
 
 function DisplayDurationClicked(props) {
   return (
-    <div className="duration-clicked">
-      <span className="duration-indicator"></span>
+    <div className="clicked-duration">
+      <span className="duration-bar" id="duration-bar"></span>
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import DisplayBils from "./components/DisplayBils.js";
-import DisplayDurationClicked from "./components/DisplayDurationClicked.js";
 import Bils from "./gameObjects/Bils.js";
 import "./css/main.css";
 
@@ -16,7 +15,7 @@ const bilsSound = {
 
 function App() {
   const [inGame, setInGame] = React.useState({
-    durationClicked: 500,
+    clickedDuration: 500,
     lastTimeClicked: 0,
   });
 
@@ -34,7 +33,7 @@ function App() {
     event.preventDefault();
 
     const time = new Date().getTime();
-    const duration = inGame.durationClicked + inGame.lastTimeClicked;
+    const duration = inGame.clickedDuration + inGame.lastTimeClicked;
 
     if (time > duration) {
       setInGame((prevInGame) => {
@@ -68,7 +67,6 @@ function App() {
 
   return (
     <main>
-      <DisplayDurationClicked duration={inGame.durationClicked} />
       <div className="container py-5">
         <div className="row d-flex justify-content-center align-items-center flex-column">
           <h1 className="text-center">Hello World</h1>
