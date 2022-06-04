@@ -1,17 +1,27 @@
 import React from "react";
 import "../css/main.css";
 
+const btnClicked = (target) => {
+  target.classList.add("btn-clicked");
+  setTimeout(() => {
+    target.classList.remove("btn-clicked");
+  }, 250);
+};
+
 const Game = () => {
   const handlePlay = (e) => {
     e.preventDefault();
+    btnClicked(e.target);
     console.log("Play");
   };
   const handleSettings = (e) => {
     e.preventDefault();
+    btnClicked(e.target);
     console.log("Settings");
   };
   const handleCredits = (e) => {
     e.preventDefault();
+    btnClicked(e.target);
     console.log("Credits");
   };
 
