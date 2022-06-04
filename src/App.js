@@ -80,6 +80,8 @@ function App() {
           return prevBil.id === gameObject.id ? gameObject : prevBil;
         });
       });
+    } else {
+      event.target.classList.add("shake");
     }
   };
 
