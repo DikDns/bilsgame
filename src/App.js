@@ -46,6 +46,7 @@ function App() {
 
   const handleAnimationEnd = (event, gameObject) => {
     event.preventDefault();
+    event.target.classList.remove("shake");
   };
 
   return (
