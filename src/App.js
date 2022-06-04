@@ -51,9 +51,9 @@ function App() {
 
   return (
     <main>
-      <h1>Hello World</h1>
       <div className="container py-5">
         <div className="row d-flex justify-content-center align-items-center flex-column">
+          <h1 className="text-center">Hello World</h1>
           {bils.map((bil, index) => (
             <DisplayBils
               key={index}
