@@ -40,7 +40,8 @@ h6 {
   position: fixed;
   display: flex;
   justify-content: flex-end;
-  height: 10px;
+  height: 5px;
+  border-radius: 12px;
 }
 
 .duration-bar {
