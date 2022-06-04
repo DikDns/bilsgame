@@ -14,12 +14,23 @@ const bilsSound = {
 };
 
 function App() {
-  const [game, setGame] = React.useState({
-    player: {
-      highscore: 0,
-    },
-  });
+  // const [game, setGame] = React.useState({
+  //   player: {
+  //     highscore: 0,
+  //   },
+  // });
   const [bils, setBils] = React.useState([new Bils(0, "0", false, bilsSound)]);
+
+  function handleOnClick(event, gameObject) {
+    event.preventDefault();
+
+    console.log(gameObject);
+    gameObject.setSelected(!gameObject.selected);
+  }
+
+  function handleAnimationEnd(event, gameObject) {
+    event.preventDefault();
+  }
 
   return (
     <main>
@@ -27,7 +38,12 @@ function App() {
       <div className="container py-5">
         <div className="row d-flex justify-content-center align-items-center flex-column">
           {bils.map((bil, index) => (
-            <DisplayBils key={index} gameobject={bil} />
+            <DisplayBils
+              key={index}
+              gameobject={bil}
+              handleOnClick={handleOnClick}
+              handleAnimationEnd={handleAnimationEnd}
+            />
           ))}
         </div>
       </div>
