@@ -1,7 +1,10 @@
 import React from "react";
 import "../css/main.css";
+import btnClickedSfx from "../assets/music/sfx/btn-clicked.wav";
 
-const btnClicked = (target) => {
+const btnClicked = (target, sfx) => {
+  sfx.load();
+  sfx.play();
   target.classList.add("btn-clicked");
   setTimeout(() => {
     target.classList.remove("btn-clicked");
@@ -9,19 +12,21 @@ const btnClicked = (target) => {
 };
 
 const Game = () => {
+  const btnSfx = new Audio(btnClickedSfx);
+
   const handlePlay = (e) => {
     e.preventDefault();
-    btnClicked(e.target);
+    btnClicked(e.target, btnSfx);
     console.log("Play");
   };
   const handleSettings = (e) => {
     e.preventDefault();
-    btnClicked(e.target);
+    btnClicked(e.target, btnSfx);
     console.log("Settings");
   };
   const handleCredits = (e) => {
     e.preventDefault();
-    btnClicked(e.target);
+    btnClicked(e.target, btnSfx);
     console.log("Credits");
   };
 

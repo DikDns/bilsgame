@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
+import Game from "./components/Game.js";
 import reportWebVitals from "./reportWebVitals";
 import "./assets/fonts/SplineSans-Light.ttf";
 import "./assets/fonts/SplineSans-Medium.ttf";
@@ -12,7 +12,7 @@ import "./assets/fonts/SplineSans-Bold.ttf";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Game />
   </React.StrictMode>
 );
 

@@ -4,35 +4,6 @@ import DisplayDurationBar from "./components/DisplayDurationBar.js";
 import Bils from "./gameObjects/Bils.js";
 import "./css/main.css";
 
-import bilsClicked from "./assets/music/sfx/bils-clicked.wav";
-import bilsActivated from "./assets/music/sfx/bils-activated.wav";
-import bilsDuplicated from "./assets/music/sfx/bils-duplicated.wav";
-import play from "./assets/music/play.mp3";
-
-const bilsSound = {
-  clicked: new Audio(bilsClicked),
-  activated: new Audio(bilsActivated),
-  duplicated: new Audio(bilsDuplicated),
-};
-
-const durationBar = (setDurationBarWidth, duration) => {
-  const scaleBetween = (unscaledNum, minAllowed, maxAllowed, min, max) =>
-    ((maxAllowed - minAllowed) * (unscaledNum - min)) / (max - min) +
-    minAllowed;
-
-  const max = duration;
-  setInterval(() => {
-    if (duration >= 0) {
-      setDurationBarWidth(() => ({
-        width: `${Math.floor(scaleBetween(duration, 0, 100, 0, max))}%`,
-      }));
-      duration -= 10;
-    } else {
-      clearInterval();
-    }
-  }, 10);
-};
-
 function App() {
   const [inGame, setInGame] = React.useState({
     clickedDuration: 1000,
@@ -49,12 +20,6 @@ function App() {
   const [durationBarWidth, setDurationBarWidth] = React.useState({
     width: "0%",
   });
-
-  function handleMusic() {
-    const audio = new Audio(play);
-    audio.play();
-    audio.loop = true;
-  }
 
   const handleOnClick = async (event, gameObject) => {
     event.preventDefault();
@@ -97,13 +62,6 @@ function App() {
   return (
     <main>
       <DisplayDurationBar style={durationBarWidth} />
-      <div
-        type="button"
-        onClick={handleMusic}
-        className="btn btn-secondary btn-lg"
-      >
-        play music
-      </div>
       <div className="container py-5">
         <div className="row d-flex justify-content-center align-items-center flex-column">
           <h1 className="text-center">Hello World</h1>
