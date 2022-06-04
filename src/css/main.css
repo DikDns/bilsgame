@@ -64,7 +64,6 @@ h6 {
   background-color: #fff;
   color: var(--color-primary);
   border: solid 5px var(--color-primary);
-  transform: translate(3px, 2px);
 }
 
 .menuBtn-secondary {
@@ -75,6 +74,9 @@ h6 {
   background-color: #fff;
   color: var(--color-secondary);
   border: solid 5px var(--color-secondary);
+}
+
+.btn-clicked {
   transform: translate(3px, 2px);
 }
 
