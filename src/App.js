@@ -24,6 +24,9 @@ function App() {
     new Bils(1, "7", false, bilsSound),
     new Bils(2, "2", false, bilsSound),
     new Bils(3, "9", false, bilsSound),
+    new Bils(4, "1", false, bilsSound),
+    new Bils(5, "3", false, bilsSound),
+    new Bils(6, "4", false, bilsSound),
   ]);
 
   const handleOnClick = async (event, gameObject) => {
