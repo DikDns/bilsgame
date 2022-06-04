@@ -17,6 +17,22 @@ class Bils {
   getName() {
     return this.name;
   }
+
+  setSelected(newSelected) {
+    this.selected = newSelected;
+  }
+
+  getSelected() {
+    return this.selected;
+  }
+
+  setSound(newSound) {
+    this.sound = newSound;
+  }
+
+  getSound() {
+    return this.sound;
+  }
 }
 
 export default Bils;
