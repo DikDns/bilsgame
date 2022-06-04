@@ -4,20 +4,20 @@ import "../css/main.css";
 const Game = () => {
   return (
     <main>
-      <div className="main-menu container">
-        <div className="play row my-4">
-          <button type="button" className="btn btn-primary">
+      <div className="main-menu py-5">
+        <div className="play row mb-4 justify-content-center">
+          <button type="button" className="menuBtn menuBtn-primary">
             Play
           </button>
         </div>
-        <div className="setting row my-3">
-          <button type="button" className="btn btn-secondary">
-            Setting
+        <div className="settings row mb-3 justify-content-center">
+          <button type="button" className="menuBtn menuBtn-secondary">
+            Settings
           </button>
         </div>
-        <div className="credit row my-3">
-          <button type="button" className="btn btn-secondary">
-            Credit
+        <div className="credits row mb-3 justify-content-center">
+          <button type="button" className="menuBtn menuBtn-secondary">
+            Credits
           </button>
         </div>
       </div>
