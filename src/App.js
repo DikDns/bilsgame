@@ -14,6 +14,11 @@ const bilsSound = {
 };
 
 function App() {
+  const [inGame, setInGame] = React.useState({
+    durationClicked: 500,
+    lastTimeClicked: 0,
+  });
+
   const [bils, setBils] = React.useState([
     new Bils(0, "0", false, bilsSound),
     new Bils(1, "7", false, bilsSound),
@@ -27,19 +32,32 @@ function App() {
   const handleOnClick = async (event, gameObject) => {
     event.preventDefault();
 
-    await gameObject.setSelected(!gameObject.selected);
-    // Set the volume to the lowest (0.1)
-    gameObject.getSound().clicked.volume = 0.1;
-    // To reset if the click was too fast
-    await gameObject.getSound().clicked.load();
-    // Play the clicked effect
-    await gameObject.getSound().clicked.play();
+    const time = new Date().getTime();
+    const duration = inGame.durationClicked + inGame.lastTimeClicked;
 
-    await setBils((prevBils) => {
-      return prevBils.map((prevBil) => {
-        return prevBil.id === gameObject.id ? gameObject : prevBil;
+    if (time > duration) {
+      setInGame((prevInGame) => {
+        console.log(prevInGame);
+        return {
+          ...prevInGame,
+          lastTimeClicked: time,
+        };
       });
-    });
+
+      await gameObject.setSelected(!gameObject.selected);
+      // Set the volume to the lowest (0.1)
+      gameObject.getSound().clicked.volume = 0.1;
+      // To reset if the click was too fast
+      await gameObject.getSound().clicked.load();
+      // Play the clicked effect
+      await gameObject.getSound().clicked.play();
+
+      setBils((prevBils) => {
+        return prevBils.map((prevBil) => {
+          return prevBil.id === gameObject.id ? gameObject : prevBil;
+        });
+      });
+    }
   };
 
   const handleAnimationEnd = (event, gameObject) => {
