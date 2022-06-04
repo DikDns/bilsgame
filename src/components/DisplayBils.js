@@ -1,38 +1,14 @@
 import React from "react";
 
-function DisplayBils({ gameobject }) {
-  const [state, setState] = React.useState({
-    shake: false,
-    selected: false,
-  });
-
-  function handleOnClick(event) {
-    event.preventDefault();
-
-    setState((prevState) => ({
-      selected: !prevState.selected,
-      shake: true,
-    }));
-  }
-
-  function handleAnimationEnd(event) {
-    event.preventDefault();
-    setState((prevState) => ({
-      selected: prevState.selected,
-      shake: false,
-    }));
-  }
-
-  React.useState(() => {}, [state]);
-
+function DisplayBils({ gameobject, handleOnClick, handleAnimationEnd }) {
   return (
     <div
       id={gameobject.id}
-      className={`${state.shake ? `shake` : ``} bils my-2 ${
-        state.selected ? `bg-info text-white` : ``
+      className={`bils my-2 ${
+        gameobject.selected ? `shake bg-info text-white` : `shake`
       }`}
-      onClick={(event) => handleOnClick(event)}
-      onAnimationEnd={(event) => handleAnimationEnd(event)}
+      onClick={(event) => handleOnClick(event, gameobject)}
+      onAnimationEnd={(event) => handleAnimationEnd(event, gameobject)}
     >
       <span
         className={`h-100 fw-bold d-flex justify-content-center align-items-center`}
