@@ -1,6 +1,6 @@
 import React from "react";
 
-function DisplayBils(props) {
+function DisplayBils({ gameobject }) {
   const [state, setState] = React.useState({
     shake: false,
     selected: false,
@@ -27,7 +27,7 @@ function DisplayBils(props) {
 
   return (
     <div
-      id={props.id}
+      id={gameobject.id}
       className={`${state.shake ? `shake` : ``} bils my-2 ${
         state.selected ? `bg-info text-white` : ``
       }`}
@@ -37,7 +37,7 @@ function DisplayBils(props) {
       <span
         className={`h-100 fw-bold d-flex justify-content-center align-items-center`}
       >
-        {props.name}
+        {gameobject.name}
       </span>
     </div>
   );
