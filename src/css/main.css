@@ -1,3 +1,9 @@
+:root {
+  --color-primary: #59e391;
+  --color-secondary: #227c9d;
+  --color-dark: #2b283a;
+}
+
 body {
   background-color: #ececec;
   font-family: "SplineSans-Regular", sans-serif;
@@ -13,8 +19,67 @@ h6 {
   font-family: "SplineSans-Bold", sans-serif;
 }
 
+/********************************************/
+/**        GAME MENU STYLING               **/
+/********************************************/
+/* MAIN MENU STYLING */
+.main-menu {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+}
+
+/* BUTTON STYLING */
+.menuBtn {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  height: 50px;
+  width: 200px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+  font-family: "SplineSans-Bold", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  transition: all 0.2s;
+}
+
+.menuBtn-primary {
+  font-size: 1.25em;
+  background-color: var(--color-primary);
+}
+
+.menuBtn-primary:hover {
+  background-color: #fff;
+  color: var(--color-primary);
+  border: solid 5px var(--color-primary);
+  transform: translate(3px, 2px);
+}
+
+.menuBtn-secondary {
+  background-color: var(--color-secondary);
+}
+
+.menuBtn-secondary:hover {
+  background-color: #fff;
+  color: var(--color-secondary);
+  border: solid 5px var(--color-secondary);
+  transform: translate(3px, 2px);
+}
+
 .color-dark {
-  color: #2b283a;
+  color: var(--text-dark);
 }
 
 .bils {
