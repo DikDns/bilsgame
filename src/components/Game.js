@@ -8,7 +8,7 @@ const btnClicked = (target, sfx) => {
   target.classList.add("btn-clicked");
   setTimeout(() => {
     target.classList.remove("btn-clicked");
-  }, 250);
+  }, 100);
 };
 
 const Game = () => {
@@ -19,21 +19,12 @@ const Game = () => {
     btnClicked(e.target, btnSfx);
     console.log("Play");
   };
-  const handleSettings = (e) => {
-    e.preventDefault();
-    btnClicked(e.target, btnSfx);
-    console.log("Settings");
-  };
-  const handleCredits = (e) => {
-    e.preventDefault();
-    btnClicked(e.target, btnSfx);
-    console.log("Credits");
-  };
 
   return (
     <main>
       <div className="main-menu py-5">
-        <div className="play row mb-4 justify-content-center">
+        <h1 className="mb-5 title">Prototype Dn-1</h1>
+        <div className="play mb-4 justify-content-center">
           <button
             type="button"
             className="menuBtn menuBtn-primary"
@@ -42,7 +33,7 @@ const Game = () => {
             Play
           </button>
         </div>
-        <div className="settings row mb-3 justify-content-center">
+        {/* <div className="settings row mb-3 justify-content-center">
           <button
             type="button"
             className="menuBtn menuBtn-secondary"
@@ -59,7 +50,7 @@ const Game = () => {
           >
             Credits
           </button>
-        </div>
+        </div> */}
       </div>
     </main>
   );
