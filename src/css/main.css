@@ -36,6 +36,14 @@ h6 {
   z-index: 1;
 }
 
+.title {
+  color: #ffffff;
+  font-size: 2em;
+  width: 300px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 /* BUTTON STYLING */
 .menuBtn {
   box-sizing: border-box;
@@ -53,7 +61,8 @@ h6 {
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #fff;
-  transition: all 0.2s ease-in;
+  transition: background-color 0.2s ease-in, color 0.2s ease-in,
+    border 0.2s ease-in;
 }
 
 .menuBtn-primary {
