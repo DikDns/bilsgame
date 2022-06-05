@@ -8,6 +8,7 @@ class Bils {
     this.id = id;
     this.name = name;
     this.selected = selected;
+    this.doubled = false;
     this.sound = {
       activated: sound.activated,
       clicked: sound.clicked,
