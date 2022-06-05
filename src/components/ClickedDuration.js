@@ -1,4 +1,4 @@
-import React from "react";
+const durationBar = (callback, duration) => {};
 
 function DisplayDurationClicked(props) {
   return (
@@ -8,4 +8,4 @@ function DisplayDurationClicked(props) {
   );
 }
 
-export default DisplayDurationClicked;
+export { DisplayDurationClicked, durationBar };

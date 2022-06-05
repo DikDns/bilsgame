@@ -94,6 +94,10 @@ h6 {
   color: var(--text-dark);
 }
 
+.hide {
+  display: none;
+}
+
 .bils {
   width: 100px;
   height: 100px;
