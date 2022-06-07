@@ -64,8 +64,12 @@ const Game = () => {
     console.log(game);
   }, [game]);
 
-  const handleOnClick = (event, gameObj) => {
-    console.log("clicked", gameObj);
+  const handleOnClick = (event, localGameObj) => {
+    console.log("clicked", localGameObj);
+
+    const bil = GAME_OBJECT.bilsObj.bils.at(localGameObj.id);
+    bil.selected = !bil.selected;
+    setGame((prevGame) => ({ gameObj: GAME_OBJECT, ...prevGame }));
   };
 
   const handleOnAnimationEnd = (event) => {
