@@ -9,7 +9,7 @@ const Game = () => {
 
   return (
     <main>
-      <div className={`py-5`}>
+      <div className={`d-flex flex-column align-items-center py-5`}>
         <h1 className="mb-5 title">Prototype Dn-1</h1>
         <div className="mb-4 justify-content-center">
           <button
