@@ -14,7 +14,7 @@ class BilsObj {
     }
   }
 
-  randomizeBils(count, id = null) {
+  randomizeBils(count = this.count, id = null) {
     if (id === null && count >= 1) {
       const arrBils = [];
       const maxName = this.names.length - 1;
@@ -24,6 +24,10 @@ class BilsObj {
         arrBils.push(new Bil(i, randomNum));
       }
       return arrBils;
+    } else {
+      for (let i = 0; i < count; i++) {
+        console.log(i);
+      }
     }
   }
 }
