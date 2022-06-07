@@ -2,17 +2,17 @@ import React from "react";
 
 const DisplayBils = (props) => {
   const className = `bils ${
-    props.selected ? `info text-white shake` : `shake`
+    props.gameObj.selected ? `info text-white shake` : `shake`
   }`;
 
   return (
     <div
       className={className}
-      id={props.id}
-      onClick={props.onClick}
-      onAnimationEnd={props.onAnimationEnd}
+      id={props.gameObj.id}
+      onClick={(event) => props.onClick(event, props.gameObj)}
+      onAnimationEnd={(event) => props.onAnimationEnd(event)}
     >
-      {props.name}
+      {props.gameObj.name}
     </div>
   );
 };

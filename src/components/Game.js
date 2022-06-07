@@ -32,7 +32,14 @@ const Game = () => {
       return ``;
     } else {
       return game.gameObj.bilsObj.bils.map((bil, i) => {
-        return <DisplayBils key={i} id={bil.id} name={bil.name} />;
+        return (
+          <DisplayBils
+            key={i}
+            gameObj={bil}
+            onClick={handleOnClick}
+            onAnimationEnd={handleOnAnimationEnd}
+          />
+        );
       });
     }
   };
@@ -56,6 +63,14 @@ const Game = () => {
   React.useEffect(() => {
     console.log(game);
   }, [game]);
+
+  const handleOnClick = (event, gameObj) => {
+    console.log("clicked", gameObj);
+  };
+
+  const handleOnAnimationEnd = (event) => {
+    event.target.classList.remove("shake");
+  };
 
   return (
     <main>
