@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/main.css";
 
+import DisplayBils from "./DisplayBils.js";
 import { BilsObj } from "./Bils.js";
 
 class GameSettings {
@@ -25,6 +26,16 @@ const Game = () => {
     gameObj: GAME_OBJECT,
     settings: GAME_SETTINGS,
   });
+
+  const checkBils = () => {
+    if (game.gameObj.bilsObj === undefined) {
+      return ``;
+    } else {
+      return game.gameObj.bilsObj.bils.map((bil, i) => {
+        return <DisplayBils key={i} id={bil.id} name={bil.name} />;
+      });
+    }
+  };
 
   const handlePlay = (event) => {
     event.preventDefault();
@@ -59,6 +70,7 @@ const Game = () => {
             {game.settings.playState ? "Stop" : "Start"}
           </button>
         </div>
+        {checkBils()}
       </div>
     </main>
   );
