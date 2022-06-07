@@ -6,7 +6,12 @@ const DisplayBils = (props) => {
   }`;
 
   return (
-    <div className={className} id={props.id}>
+    <div
+      className={className}
+      id={props.id}
+      onClick={props.onClick}
+      onAnimationEnd={props.onAnimationEnd}
+    >
       {props.name}
     </div>
   );
