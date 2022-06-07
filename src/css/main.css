@@ -99,6 +99,7 @@ h6 {
 }
 
 .bils {
+  margin: 20px 0;
   width: 100px;
   height: 100px;
   background: #ffffff;
@@ -106,6 +107,8 @@ h6 {
   border-radius: 12px;
   font-family: "SplineSans-Bold";
   font-size: 3em;
+  text-align: center;
+  line-height: 100px;
   transition: all 0.2s;
 }
 
