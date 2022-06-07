@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import Game from "./components/Game.js";
-import reportWebVitals from "./reportWebVitals";
 import "./assets/fonts/SplineSans-Light.ttf";
 import "./assets/fonts/SplineSans-Medium.ttf";
 import "./assets/fonts/SplineSans-Regular.ttf";

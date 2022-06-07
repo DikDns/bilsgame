@@ -16,6 +16,10 @@ class Bils {
     };
   }
 
+  setDoubled(newDoubled) {
+    this.doubled = newDoubled;
+  }
+
   setName(newName) {
     this.name = newName;
   }
