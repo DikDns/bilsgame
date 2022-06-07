@@ -2,7 +2,7 @@ import React from "react";
 
 const DisplayBils = (props) => {
   const className = `bils ${
-    props.gameObj.selected ? `info text-white shake` : `shake`
+    props.gameObj.selected ? `bg-info text-white shake` : `shake`
   }`;
 
   return (
